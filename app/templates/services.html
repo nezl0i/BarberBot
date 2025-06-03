@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Панель просмотра услуг
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css/applications.css">
+{% endblock %}
+
+{% block content %}
+<main>
+    <h1>{{ title_h1 }}</h1>
+
+    {% if access %}
+    <table id="services-table">
+        <thead>
+        <tr>
+            <th>Наименование услуги</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.service_name }}</td>
+            <td>
+                <button class="delete-btn" onclick='deleteService({{ service.service_id }})'>Удалить</button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit" class="btn_add_service" >Добавить</button>
+    {% else %}
+    <p>{{ message }}</p>
+    {% endif %}
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/services.js"></script>
+{% endblock %}

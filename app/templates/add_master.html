@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Введите стоимость за обучение</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="data:;base64,=">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    {% block styles %}
+    <link rel="stylesheet" href="../static/css/add_master.css">
+    {% endblock %}
+</head>
+<body>
+<h3>Введите стоимость за одного человека по каждой программе</h3>
+
+<form action="/submit_prices" method="post">
+    <input type="hidden" name="application_id" value="3">
+
+    <button type="submit">Отправить</button>
+</form>
+-->
+</body>
+</html>
